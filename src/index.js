@@ -1,25 +1,13 @@
 const express = require('express');
 
-//REMOVE
-const v1Router = require('./v1/routes');
-//ADD
-const v1workoutRouter = require('./v1/routes/workoutRoutes');
-
+// const v1Router = require('./v1/routes');
+const v1woRouter = require('./v1/routes/woRoutes');
 const app = express();
-const port = process.env.PORT || 3000;
 
-// REMOVE 
-app.get('/', (req, res) => {
-  res.send("<h1>It's Working</h1>");
-});
+// app.use('/api/v1/', v1Router);
 
-// ADD
-app.use('/api/v1', v1Router);
+app.use('/api/v1/workouts', v1woRouter);
 
-// ADD  
-app.use('/api/v1/workouts', v1workoutRouter);
-
-
-app.listen(port, () => {
-  console.log(`Api is listening on port ${port}`);
+app.listen(4000, () => {
+  console.log(`Server berhasil running di port 4000`);
 });
