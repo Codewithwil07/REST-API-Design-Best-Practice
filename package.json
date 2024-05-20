@@ -1,5 +1,5 @@
 {
-  "name": "rest-api",
+  "name": "crossfit-wood-api",
   "version": "1.0.0",
   "description": "Rest API Design Best Practice",
   "main": "/src/index.js",
