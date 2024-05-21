@@ -1,8 +1,11 @@
 const express = require('express');
+const workoutController = require('../../controllers/workoutController');
+
 const router = express.Router();
 
 router.get('/', (req, res) => {
-  res.send('Menerima semua Workout');
+  const getAllWorkouts = workoutController.getAllWorkouts();
+  return getAllWorkouts;
 });
 
 router.get('/:workoutId', (req, res) => {

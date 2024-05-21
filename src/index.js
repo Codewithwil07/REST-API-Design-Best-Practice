@@ -10,7 +10,7 @@ app.get('/', (req, res) => {
   res.send('<h1>Its Working</h1>');
 });
 
-// ** ADD **
+
 app.use('/api/v1/workouts', v1WorkoutsRouter);
 
 app.listen(PORT, () => {
