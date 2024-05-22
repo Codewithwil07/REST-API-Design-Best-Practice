@@ -3,25 +3,14 @@ const workoutController = require('../../controllers/workoutController');
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
-  const getAllWorkouts = workoutController.getAllWorkouts();
-  return getAllWorkouts;
-});
+router.get('/', workoutController.getAllWorkouts);
 
-router.get('/:workoutId', (req, res) => {
-  res.send('Menerima sebuah keluaran workout');
-});
+router.get('/:workoutId', workoutController.getOneWorkout);
 
-router.post('/', (req, res) => {
-  res.send('Membuat sebuah Workout');
-});
+router.post('/', workoutController.createNewWorkout);
 
-router.patch('/:workoutId', (req, res) => {
-  res.send('Ubah Sebuah Workout');
-});
+router.patch('/:workoutId', workoutController.updateOneWorkout);
 
-router.delete('/:workoutId', (req, res) => {
-  res.send('Hapus Sebuah Workout');
-});
+router.delete('/:workoutId', workoutController.deleteOneWorkout);
 
 module.exports = router;
