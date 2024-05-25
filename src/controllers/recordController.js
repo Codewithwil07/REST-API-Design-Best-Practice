@@ -7,7 +7,7 @@ const getRecordForWorkout = (req, res) => {
   if (!workoutId) {
     res.status(400).send({
       status: 'FAILED',
-      data: { error: "Parameter ':workoutId' can be not empty" },
+      data: { error: "Can't find workout with id undefined" },
     });
   }
   try {
